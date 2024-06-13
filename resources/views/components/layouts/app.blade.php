@@ -8,6 +8,10 @@
 
     <title>{{ $title ?? config('app.name') }}</title>
 
+    <x-turbo::page-view-transition />
+
+    {{ $meta ?? '' }}
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
