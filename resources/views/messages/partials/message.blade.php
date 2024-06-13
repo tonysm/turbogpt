@@ -8,7 +8,7 @@
         </div>
     </div>
     @endif
-    <div class="prose">
+    <div class="prose dark:prose-invert">
         {!! Str::markdown($message->content ?? __('Generating...')) !!}
     </div>
 </div>

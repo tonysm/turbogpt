@@ -20,10 +20,14 @@ class GenerateReply implements ShouldQueue
 
     public function handle(Client $ai): void
     {
-        $prompt = "";
+        $lastMessage = $this->message->chat->messages()->latest()->whereNot('id', $this->message)->first();
 
-        $ai->generate($prompt, function ($chunk) {
+        $prompt = [
+            ['role' => 'user', 'content' => $lastMessage->content],
+        ];
+
+        foreach ($ai->generate($prompt) as $chunk) {
             $this->message->update(['content' => $this->message->content . $chunk]);
-        });
+        }
     }
 }
