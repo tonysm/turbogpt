@@ -94,6 +94,21 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'embeddings' => [
+            'driver' => 'pgsql',
+            'url' => env('EMBEDDINGS_DB_URL'),
+            'host' => env('EMBEDDINGS_DB_HOST', '127.0.0.1'),
+            'port' => env('EMBEDDINGS_DB_PORT', '5432'),
+            'database' => env('EMBEDDINGS_DB_DATABASE', 'demoembeddings'),
+            'username' => env('EMBEDDINGS_DB_USERNAME', 'postgres'),
+            'password' => env('EMBEDDINGS_DB_PASSWORD', 'password'),
+            'charset' => env('EMBEDDINGS_DB_CHARSET', 'utf8'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DB_URL'),

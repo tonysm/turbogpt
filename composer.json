@@ -12,7 +12,9 @@
         "laravel/horizon": "^5.24",
         "laravel/reverb": "@beta",
         "laravel/tinker": "^2.9",
+        "mathsgod/langchain-text-splitter": "^1.0",
         "openai-php/client": "^0.10.1",
+        "pgvector/pgvector": "^0.1.4",
         "predis/predis": "^2.2"
     },
     "require-dev": {

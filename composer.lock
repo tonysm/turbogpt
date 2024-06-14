@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "588a113591fbf0fb431a82732b153d8d",
+    "content-hash": "75e2d5098d3daf2f5d1fd9283cc326db",
     "packages": [
         {
             "name": "brick/math",
@@ -2279,6 +2279,47 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
+            "name": "mathsgod/langchain-text-splitter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mathsgod/langchain-text-splitter-php.git",
+                "reference": "d37a0882d7465783189a5b36be2b78a209f3110a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mathsgod/langchain-text-splitter-php/zipball/d37a0882d7465783189a5b36be2b78a209f3110a",
+                "reference": "d37a0882d7465783189a5b36be2b78a209f3110a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Langchain\\TextSplitter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raymond Chong",
+                    "email": "mathsgod@yahoo.com"
+                }
+            ],
+            "description": "A PHP library to split text into sentences and words.",
+            "support": {
+                "issues": "https://github.com/mathsgod/langchain-text-splitter-php/issues",
+                "source": "https://github.com/mathsgod/langchain-text-splitter-php/tree/1.0.0"
+            },
+            "time": "2024-02-27T08:40:18+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.6.0",
             "source": {
@@ -3006,6 +3047,58 @@
                 "source": "https://github.com/paragonie/sodium_compat/tree/v1.21.1"
             },
             "time": "2024-04-22T22:05:04+00:00"
+        },
+        {
+            "name": "pgvector/pgvector",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pgvector/pgvector-php.git",
+                "reference": "301ce729091b496b477c28f548bcba285d59d86d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pgvector/pgvector-php/zipball/301ce729091b496b477c28f548bcba285d59d86d",
+                "reference": "301ce729091b496b477c28f548bcba285d59d86d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "require-dev": {
+                "illuminate/database": ">= 9.0",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pgvector\\Laravel\\PgvectorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pgvector\\": "src/",
+                    "Pgvector\\Laravel\\": "src/laravel/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Kane",
+                    "email": "andrew@ankane.org"
+                }
+            ],
+            "description": "pgvector support for PHP",
+            "support": {
+                "issues": "https://github.com/pgvector/pgvector-php/issues",
+                "source": "https://github.com/pgvector/pgvector-php"
+            },
+            "time": "2023-11-15T02:20:37+00:00"
         },
         {
             "name": "php-http/discovery",

@@ -16,7 +16,7 @@ class Client
         $stream = $this->ai->chat()->createStreamed([
             'model' => 'gpt-4o',
             'messages' => $prompt,
-            'temperature' => 0,
+            'temperature' => 0.5,
         ]);
 
         foreach ($stream as $reply) {
@@ -24,5 +24,13 @@ class Client
                 yield $content;
             }
         }
+    }
+
+    public function generateEmbeddings($input): array
+    {
+        return $this->ai->embeddings()->create([
+            'model' => 'text-embedding-3-large',
+            'input' => $input,
+        ])->embeddings;
     }
 }
