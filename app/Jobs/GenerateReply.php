@@ -34,6 +34,10 @@ class GenerateReply implements ShouldQueue
         foreach ($ai->generate($prompt) as $chunk) {
             $this->message->update(['content' => $this->message->content . $chunk]);
         }
+
+        if ($this->message->chat->messages()->count() === 2) {
+            $this->generateTitle($ai);
+        }
     }
 
     private function retrieveEmbeddingsFor(Message $message, Client $ai): string
@@ -45,5 +49,23 @@ class GenerateReply implements ShouldQueue
             ->take(3)
             ->pluck('chunk')
             ->join(' ');
+    }
+
+    private function generateTitle(Client $ai): void
+    {
+        $prompt = [
+            ['role' => 'system', 'content' => 'You are master at summaization. Summarize the following content in 5 words or so.'],
+            ['role' => 'user', 'content' => $this->message->chat->messages()->latest()->pluck('content')->join(' ')],
+        ];
+
+        $title = "";
+
+        foreach ($ai->generate($prompt) as $chunk) {
+            $title .= $chunk;
+        }
+
+        $this->message->chat->update([
+            'title' => $title,
+        ]);
     }
 }
