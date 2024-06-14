@@ -1,7 +1,7 @@
 <li data-controller="chat" id="{{ dom_id($chat) }}" class="relative flex items-center space-x-2 px-4 py-1.5 overflow-hidden rounded-lg bg-neutral-800 text-white text-sm">
-    <a href="{{ route('chats.show', $chat) }}" class="flex-1 truncate">{{ $chat->title}} <span class="absolute inset-0">&nbsp;</span></a>
+    <a href="{{ route('chats.show', $chat) }}" class="flex-1 truncate" title="{{ $chat->title }}">{{ $chat->title}} <span class="absolute inset-0">&nbsp;</span></a>
 
-    <form action="{{ route('chats.destroy', $chat) }}" method="post" class="z-10" data-turbo-confirm="{{ __('Are you sure you want to delete this chat?') }}" data-action="turbo:submit-end->chat#remove">
+    <form id="{{ dom_id($chat, 'delete_form') }}" action="{{ route('chats.destroy', $chat) }}" method="post" class="z-10" data-turbo-confirm="{{ __('Are you sure you want to delete this chat?') }}" data-action="turbo:submit-end->chat#remove">
         @csrf
         @method('DELETE')
 
