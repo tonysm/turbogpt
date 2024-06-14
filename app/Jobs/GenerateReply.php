@@ -54,7 +54,7 @@ class GenerateReply implements ShouldQueue
     private function generateTitle(Client $ai): void
     {
         $prompt = [
-            ['role' => 'system', 'content' => 'You are master at summaization. Summarize the following content in 5 words or so.'],
+            ['role' => 'system', 'content' => 'You are master at summarization. Summarize the following content in 5 words or so.'],
             ['role' => 'user', 'content' => $this->message->chat->messages()->latest()->pluck('content')->join(' ')],
         ];
 
